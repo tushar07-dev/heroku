@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: rgba(255, 0, 0, 0.219);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        font-family: "Overpass";
+        font-size: 0.8em;
+        font-weight: bold;
+      }
+      p {
+        margin: 0;
+        padding: 0;
+      }
+
+      .wrapper {
+        width: 200px;
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+      }
+      input {
+        color: red;
+      }
+
+      #custom-toggle {
+        height: 10px;
+        width: 200px;
+        background-color: #333;
+        border-radius: 25px;
+        padding: 0 2px;
+        margin: 0;
+        cursor: pointer;
+      }
+      .rangeActive {
+        background-color: green;
+      }
+      .tgl-def {
+        background-color: orange;
+        border: 1px solid skyblue;
+      }
+      .tgl-on {
+        background-color: green;
+      }
+
+      .tgl-off {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <input
+        type="range"
+        name="points"
+        onchange="filterme(this.value);"
+        min="1"
+        step="1"
+        id="custom-toggle"
+        class="tgl-def"
+        max="3"
+        value="2"
+      />
+    </div>
+    <box>
+      <p id="custom-text">ALL</p>
+    </box>
+  </body>
+</html>
+
+<script>
+  function filterme(value) {
+    // console.log("ddf")
+    value = parseInt(value, 10); // Convert to an integer
+    let input = document.getElementById("custom-toggle");
+    const box = document.querySelector("box");
+
+    if (value === 1) {
+      console.log("01");
+
+      input.classList.remove("tgl-off", "tgl-def");
+      input.classList.add("tgl-on");
+
+      box.innerHTML = "<p>ENABLE</p>";
+    } else if (value === 2) {
+      console.log("02");
+      //   input.classList.remove("tgl-on", "tgl-off");
+      //   input.classList.add("tgl-def");
+
+      box.innerHTML = "<p>UnDetermined</p>";
+    } else if (value === 3) {
+      console.log("03");
+      input.classList.remove("tgl-def", "tgl-on");
+      input.classList.add("tgl-off");
+
+      box.innerHTML = "<p>DISABLE</p>";
+    }
+  }
+
+  function toggle(a) {
+    switch (a) {
+      case 1:
+        console.log("case 1 executed");
+        break;
+      case 2:
+        console.log("case 2 executed");
+        break;
+      case 3:
+        console.log("case 3 executed");
+        break;
+      default:
+        console.log("default case executed");
+    }
+  }
+
+  let a = 2;
+  toggle(a);
+</script>

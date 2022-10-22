@@ -1,0 +1,10 @@
+img1 = https://i0.wp.com/www.rosa-croisieres.com/wp-content/uploads/2017/07/tg2wed6y2we7du28i22.jpg?resize=560%2C640&ssl=1
+
+img2 = https://leadsync.me/blog/wp-content/uploads/2016/06/facebook_lead_ads_white_lable.jpg
+
+img3 = https://res.cloudinary.com/misterbnb/image/upload/v1567673590/article/cms-70424bc1e666fa8d4efdf885d9c36502d3227755.jpg
+
+img4 = https://artisantalent.com/wp-content/uploads/2012/08/5-Signs-You-Need-to-Hire-a-Graphic-Designer-1.jpg
+
+img5 = https://cdn-acojl.nitrocdn.com/mdqikLgfKYGSrbmTldEJjFfznWndiqoY/assets/static/optimized/rev-ccd34eb/wp-content/uploads/2015/03/Introverts-Are-Great-In-Sales-And-Marketing2stock-e1536926643996.jpg
+map = https://www.resortsinjimcorbett.com/puri_large.JPG0

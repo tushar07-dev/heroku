@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #nav {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 60px;
+        justify-content: space-between;
+        text-align: center;
+        border-bottom: 2px solid blue; 
+        margin: auto;
+        background-color: #F5F5DC;
+        
+      }
+
+      #nav > a {
+        color: black;
+        text-decoration: none;
+        align-items: center;
+        text-align: center;
+        font-size: 30px;
+      }
+
+      #container {
+        display: grid;
+        background-color: #f5f5dc6d;
+        grid-template-columns: repeat(4, 1fr);
+        box-sizing: border-box;
+        gap: 10px;
+      }
+      #search_div{
+        font-size:26px;
+      }
+      #search{
+        height: 20px;
+        font-size:26px;
+      }
+      .maindiv{
+        justify-content: center;
+        margin: auto;
+        text-align: start;
+        background-color: aliceblue;;
+        border: 0.5px solid black;
+        padding: 5%;
+      }
+      body{
+            background-color: rgba(255, 166, 0, 0.436);
+        }
+      @media only screen and (min-width: 580px) and (max-width: 1030px){
+        /* body{
+            background-color: green;
+        } */
+          #container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+      }
+      @media only screen and (min-width: 0px) and (max-width: 580px) {
+        /* body{
+            background-color: red;
+        } */
+        #nav {
+            height:100px;
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        #nav {
+          font-size: 20px;
+        }
+        #container {
+            grid-template-columns: repeat(1, 1fr);
+        }
+        
+      }
+
+      @media only screen and (min-width: 580px) and (max-width: 880px) {
+        /* body{
+            background-color: blue;
+        } */
+        #nav {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        #nav > a {
+          font-size: 25px;
+        }
+        #container {
+            grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      /* modal */
+      
+    </style>
+  </head>
+
+  <body>
+    <div id="nav">
+      <a href="index.html">Players page</a>
+      <a href="games.html">Games page</a>
+    </div>
+
+    <div id="search_div">
+      <label>Search :</label>
+      <input  id="search" type="type" placeholder="Search" />
+    </div>
+
+    <div>
+        <p>
+          Pagination:-
+          <span>
+            <button onclick="handleclick(1)">1</button>
+            <button onclick="handleclick(2)">2</button>
+            <button onclick="handleclick(3)">3</button>
+            <button onclick="handleclick(4)">4</button>
+          </span>
+        </p>
+      </div>
+      
+    <div id="container"></div>
+    
+  </body>
+</html>
+<script src="index.js"></script>

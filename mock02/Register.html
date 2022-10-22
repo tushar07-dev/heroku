@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #nav {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 60px;
+        background-color: teal;
+        align-items: center;
+      }
+      #nav > a {
+        color: white;
+        text-decoration: none;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="nav">
+      <a href="vaccinated.html">vaccinated</a>
+      <a href="dashboard.html">dashboard</a>
+      <a href="register.html">register</a>
+    </div>
+    <div>
+      <form id="form" name="userForm">
+        <input type="number" name="" id="uId" placeholder="id" />
+        <input type="text" name="" id="name" placeholder="Name.." />
+        <input type="number" name="" id="age" placeholder="Age..." />
+       
+        <!-- radio -->
+        <input type="radio" id="student" name="gender" value="student" />
+        <label for="student">Student</label><br />
+        <input type="radio" id="employee" name="gender" value="employee" />
+        <label for="employee">Employee</label>
+
+        <!-- <select name="" type="radio" id="emplyData">
+          <option value="designation">Designation</option>
+          <option value="employee">Employee</option>
+          <option value="student">Student</option>
+        </select> -->
+
+        <select name="" id="priority">
+          <option value="priority">priority</option>
+          <option value="p0">p0</option>
+          <option value="p1">p1</option>
+          <option value="p1">p2</option>
+          <option value="p3">p3</option>
+        </select>
+        <select name="" id="vaccine">
+          <option value="vaccine">vaccine</option>
+          <option value="covishield ">Covishield</option>
+          <option value="covaxin">Covaxin</option>
+          <option value="sputnik">Sputnik</option>
+        </select>
+        <input type="submit" name="" id="" placeholder="Register Button" />
+      </form>
+    </div>
+  </body>
+</html>
+
+<script>
+  document.querySelector("#form").addEventListener("submit", mysubmit);
+
+  var addData = JSON.parse(localStorage.getItem("dataList")) || [];
+
+  function mysubmit(e) {
+    e.preventDefault();
+
+    let radioans = checkForm();
+
+    var name = document.querySelector("#name").value;
+    var uid = document.querySelector("#uId").value;
+    var age = document.querySelector("#age").value;
+    var designation = radioans;
+    var priority = document.querySelector("#priority").value;
+    var vaccine = document.querySelector("#vaccine").value;
+
+    var dataobj = {
+      name: name,
+      uid: uid,
+      age: age,
+      designation: designation,
+      priority: priority,
+      vaccine: vaccine,
+    };
+    addData.push(dataobj);
+    console.log(addData);
+    localStorage.setItem("dataList", JSON.stringify(addData));
+  }
+
+//   Radio check :
+  function checkForm() {
+    let chosenOption = "";
+    const len = document.userForm.gender.length;
+
+    for (i = 0; i < len; i++) {
+      if (document.userForm.gender[i].checked) {
+        chosenOption = document.userForm.gender[i].value;
+      }
+    }
+
+    if (chosenOption == "") {
+      alert("Please choose your gender!");
+      return false;
+    } else {
+      return chosenOption;
+    }
+  }
+  
+</script>

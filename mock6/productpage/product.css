@@ -1,0 +1,23 @@
+.company-logo {
+    width: 400px;
+    height: 420px;
+  }
+  .child_div{
+    border : 1px solid black;
+    width: 50%;
+    margin:auto;
+    text-align:center;
+  }
+  .details-container{
+    /* font-size:25px; */
+    display: flex;
+    flex-direction:column;
+    text-align:start;
+    padding-left:9%;
+  }
+  .footer{
+    display: flex;
+    justify-content: space-between;
+    font-size: 50px;
+    padding-right: 9%;
+  }

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #nav{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: 60px;
+            background-color: teal;
+            align-items: center;
+            
+        }
+        #nav >a {
+
+            color: white;
+            text-decoration: none;
+            align-items: center;
+            text-align: center;
+        }
+        #main_div{
+            display: grid;
+            grid-template-columns: 100px;
+            gap: 20px;
+        }
+        #child_div{
+            display: flex;
+            justify-content: space-between;
+        }
+        /* #main_div{
+            display: flex;
+            gap: ;
+        } */
+    </style>
+</head>
+<body>
+    <div id="nav">
+    <a href="vaccinated.html">vaccinated</a>
+    <a href="dashboard.html">dashboard</a>
+    <a href="register.html">register</a>
+</div>
+   
+<table id="main_div">
+    <thead>
+<tr>
+    <td>Unique ID</td>
+    <td>Name</td>
+    <td>Age</td>
+    <td>Designation</td>
+    <td>Priority</td>
+    <td>Vaccine</td>
+    <td> deleted</td>
+    <td>vaccinated</td>
+    <!-- <td>viccent</td> -->
+</tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+
+
+<div class="filter-search-functionality">
+    <div class="filter">
+      <label for="filter-filter">Choose a filter:</label>
+      <select name="filter" id="filter-filter">
+        <option value="none">None</option>
+        <option value="vaccine">vaccine</option>
+        <option value="Priority">Priority</option>
+      </select>
+    </div>
+
+   
+  </div>
+</body>
+</html>
+<script>
+
+var arrData = JSON.parse(localStorage.getItem("dataList"))
+
+
+console.log(arrData);
+
+
+arrData.map(function(el,id){
+
+  var child_div = document.createElement('tr')
+
+  var id = document.createElement('td');
+  id.innerHTML = Number(el.uid)
+//   name
+  var name = document.createElement("td")
+  name.innerHTML = el.name;
+
+//   age
+  var age = document.createElement("td")
+  age.innerHTML = el.age;
+
+//   designation
+  var designation = document.createElement("td")
+  designation.innerHTML = el.designation;
+
+//   priority
+  var priority = document.createElement("td")
+  priority.innerHTML = el.priority;
+//   vaccine
+  var vaccine = document.createElement("td")
+  vaccine.innerHTML = el.vaccine;
+//   delet btn
+var mainbtn = document.createElement("td")
+  //   delet btn
+  var mainbtn = document.createElement("td")
+
+var btn = document.createElement("button");
+btn.innerText = "deleted"
+btn.style.color = "red"
+btn.addEventListener("click", function(){
+  deletedUser(el,id)
+})
+
+mainbtn.append(btn)
+//   vicnnet btn
+
+var btnvic = document.createElement("td")
+var vbtn = document.createElement("button");
+vbtn.innerText = ""
+vbtn.style.color = "green"
+btnvic.append(vbtn)
+
+child_div.append(id,name,age,designation,priority,vaccine,mainbtn,btnvic)
+
+document.querySelector("#main_div").append(child_div)
+  // data.append(row)
+  // localStorage.setItem("cart",JSON.stringify(pro))
+})
+    function deletedUser(el,id){
+        console.log("dlete")
+        // localStorage.removeItem('dataList');
+        arrData.splice(id,1);
+        console.log(arrData);
+    }
+
+function filterData() {
+  let filterQuery = filter_filter.value;
+  filterQuery = filterQuery.toLowerCase();
+
+  if (filterQuery == "none") {
+    fileredData = arrData;
+  } else {
+    fileredData = arrData;
+    fileredData = fileredData.filter((el) => {
+      let filter = el.filter.toLowerCase();
+      return filter == filterQuery;
+    });
+  }
+  console.log("FIlter" , fileredData);
+  renderPagination(fileredData);
+}
+
+</script>

@@ -1,0 +1,27 @@
+{
+  "furniture": [
+    {
+      "year": "2022",
+      "Description": "dsdsdd6+5",
+      "Price": "",
+      "type": "table",
+      "id": 1
+    },
+    {
+      "year": "2022",
+      "Description": "649648964",
+      "Price": "555",
+      "type": "table",
+      "id": 2
+    }
+  ],
+  "wishlisted": [
+    {
+      "id": 1,
+      "type": "Study table",
+      "year": 2019,
+      "Description": "Wooden table with dual laptop setup",
+      "Price": 50000
+    }
+  ]
+}

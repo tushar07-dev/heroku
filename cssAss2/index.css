@@ -1,0 +1,57 @@
+.all_div{
+    color: white;
+    background-color: teal;
+    display: inline-block;
+    font-size: 2rem;
+    border-radius: .3rem;
+    cursor: pointer;
+    position: relative;
+    margin: 3.5rem  7rem ;
+}
+.all_div:hover::after{
+    content: attr(data-tip);
+    border-radius: .5rem;
+}
+
+.bottom ::before,
+.bottom::after{
+    position: absolute;
+    content: "";
+    bottom: -1rem;
+    right: 100%;
+    background-color: black;
+    transform: translateX(100%) translateY(50%);
+}
+/* top */
+
+.top::before,
+.top::after{
+    position: absolute;
+    content: "";
+    top: -.25rem;
+    left: 50%;
+   
+    background-color: black;
+    transform: translateX(-50%) translateY(-100%);
+}
+/* left */
+
+    .left::before,
+    .left::after{
+        position: absolute;
+        content: "";
+        right: -1rem;
+        top: 100%;
+        background-color: black;
+        transform: translateX(-50%) translateY(-100%);
+    }
+
+    /* right */
+        .right::before,
+        .right::after{
+            position: absolute;
+            content: "";
+            left: -1rem;
+            top: 100%;
+            background-color: black;
+            transform: translateX(50%) translateY(-100%);}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="otp.css">
+    <link rel="stylesheet" type="text/css" href="navbar.css">
+</head>
+<body>
+    <navbar class="navbar navbar-default navbar-fixed-top">
+        <ul>
+            <li><a class="active" href="#">Home</a></li>
+            <li><a href="Adpage.html">Ad page</a></li>
+            <li><a href="../productpage/product.html">Products page</a></li>
+            <li><a href="#WishlistPage">Wishlist page</a></li>
+          </ul>
+    </navbar>
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col-md-6">
+                <h3>Add New Post</h3>
+                <form class="add-post-form">
+
+                    <div class="form-group">
+                        <label for="type">Type :</label>
+                        <select name="type" id="type-value" class="form-control">
+                            <option value="table">Table</option>
+                            <option value="bed">Bed</option>
+                            <option value="chair">Chair</option>
+                            <option value="sofa">Sofa</option>
+                          </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="title">Year :</label>
+                        <!-- <input type="number" class="form-control" id="year-value" /> -->
+                        <select name="year" id="year-value" class="form-control">
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                            <option value="2019">2019</option>
+                          </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="body">Description</label>
+                        <textarea class="form-control" id="body-value"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="price">Price</label>
+                        <input type="number" class="form-control" id="price-value" />
+                    </div>
+
+                    <button id="myBtn" type="submit" class="btn btn-primary">Add POST</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- ! OTP -->
+    <!-- <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+
+       
+
+
+    </div> -->
+
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div class="otp-container">
+            <h1>ENTER OTP</h1>
+            <div class="userInput">
+              <input type="text" id='ist' maxlength="1" onkeyup="clickEvent(this,'sec')">
+              <input type="text" id="sec" maxlength="1" onkeyup="clickEvent(this,'third')">
+              <input type="text" id="third" maxlength="1" onkeyup="clickEvent(this,'fourth')">
+              <input type="text" id="fourth" maxlength="1">
+            </div>
+            <button id="otp-btn">CONFIRM</button>
+          </div>
+        </div>
+      
+      </div>
+</body>
+</html>
+
+<script src="./adPage.js"></script>

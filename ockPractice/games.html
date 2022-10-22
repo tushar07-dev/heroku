@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: rgba(255, 166, 0, 0.436);
+      }
+      .win{
+        color: green;
+      }
+      .lost{
+        color: red;
+      }
+      #nav {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 60px;
+        justify-content: space-between;
+        text-align: center;
+        border-bottom: 2px solid blue;
+        margin: auto;
+        background-color: #f5f5dc;
+      }
+
+      #nav > a {
+        color: black;
+        text-decoration: none;
+        align-items: center;
+        text-align: center;
+        font-size: 30px;
+      }
+      .main{
+        display: flex;
+        background-color:rgba(58, 57, 57, 0.295);
+        flex-direction: row;
+      }
+
+      #container {
+        display: grid;
+        background-color: #f5f5dc6d;
+        grid-template-columns: repeat(4, 1fr);
+        box-sizing: border-box;
+        gap: 50px;
+        padding: 50px;
+        justify-content: center;
+        text-align: start;
+      }
+      /* all div */
+      #container > div {
+        
+        padding:0%;
+        padding-left: 5%;
+        box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+          0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+        /* background-color: rgb(0, 255, 255); */
+        width: 100%;
+      }
+      
+      .img {
+        height: 200px;
+        width: 100%;
+        margin: auto;
+        align-items: center;
+      }
+      @media only screen and (min-width: 0px) and (max-width: 1300px){
+        #container {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media only screen and (min-width: 0px) and (max-width: 580px) {
+        #nav {
+            height : 80px;
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        #nav {
+          font-size: 20px;
+        }
+        #container {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media only screen and (min-width: 580px) and (max-width: 880px) {
+        #nav {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        #nav > a {
+          font-size: 25px;
+        }
+        #container {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="nav">
+      <a href="index.html">Players page</a>
+      <a href="games.html">Games page</a>
+    </div>
+
+    <div id="date_input"> 
+      <input type="date" id="start_date">
+      <input type="date" id="end_date" >
+
+      <button onclick="search()">Search</button>
+    </div>
+    <div id="main">
+      <!-- <div id="sort">
+          
+            <div> -->
+      <div id="sort">
+        <p>
+          Sort by date :-
+          <span>
+            <select name="filter" id="filter" onchange="handlechange(value)">
+              <option value="/">Sort by data</option>
+              <option value="desc">High to Low</option>
+              <option value="asc">Low to High</option>
+            </select>
+          </span>
+        </p>
+        <div>
+          <p>
+            Pagination:-
+            <span>
+              <button onclick="handleclick(1)">1</button>
+              <button onclick="handleclick(2)">2</button>
+              <button onclick="handleclick(3)">3</button>
+              <button onclick="handleclick(4)">4</button>
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="container"></div>
+  </body>
+</html>
+<script src="games.js"></script>

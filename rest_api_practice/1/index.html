@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css" />
+    <title>Document</title>
+</head>
+<body>
+    <div id="main-container">
+
+        <h2 class="heading">Job Listing</h2>
+  
+        <div id="search-functionality">
+          <div class="filter">
+  
+            <label for="role-filter">SELECT A ROLE:</label>
+  
+            <select name="ROLE-LIST" id="jobrole">
+              <option value="none">None</option>
+              <option value="Frontend">Frontend</option>
+              <option value="Fullstack">Fullstack</option>
+            </select>
+          </div>
+          <div id="search">
+            <label for="search-lang">Search :</label>
+            <input
+              type="text"
+              name="search-job"
+              id="search-jobs"
+              placeholder="Search for JOBS" />
+            
+          </div>
+        </div>
+        <div id="page-page"></div>
+  
+        <div class="job-listing-container" id="list"></div>
+  
+      </div>
+</body>
+</html>
+
+<script src="./index.js"></script>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style >
+            .maindiv{
+       line-height: 50px; 
+       /* border: 1px solid red; */
+       width: 35%;
+       margin: auto;
+       box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+    }
+    .submit{
+        color: white;
+        background-color: blueviolet;
+    }
+    
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <br />
+      <h1 class="text-center text-success">FORM Validate</h1>
+      <br />
+      <!-- name -->
+      <div class="maindiv">
+        <form action="#"  class="bg-light">
+          <!--- name -->
+          <div class="form-group">
+            <label>Name :</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              class="form-control"
+              autocomplete="off"
+            />
+            <span class="text-danger text-bold" id="nameName"> </span>
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label> Email :</label>
+            <input
+              type="text"
+              name="email"
+              id="email"
+              class="form-control"
+              autocomplete="off"
+            />
+            <span class="text-danger text-bold" id="emails"> </span>
+          </div>
+
+         
+
+          <!-- Passward -->
+          <div class="form-group">
+            <label>Password :</label>
+            <input
+              type="text"
+              name="pass"
+              id="pass"
+              class="form-control"
+              autocomplete="off"
+            />
+            <span class="text-danger text-bold" id="password"> </span>
+          </div>
+
+           <!-- SUBMIT -->
+           <input
+           type="submit"
+\           onclick= 'validation()'
+           class="submit btn-primary"
+           name="submit"
+           id="submit"
+           value="Submit"
+         />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  function validation() {
+    // preventDefault()
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let pass = document.getElementById("pass").value ;
+
+    // ! name :
+    if (name === "") {
+      document.getElementById("nameName").innerHTML =
+        "** Please fill the name field";
+      return false;
+    }
+    if (name.length <= 2 || name.length > 10) {
+      document.getElementById("nameName").innerHTML =
+        "**Username name limit must be 2 to 10";
+      return false;
+    }
+    if (!isNaN(name)) {
+      document.getElementById("nameName").innerHTML =
+        "**User name must contain alphabet";
+      return false;
+    } else {
+      name=
+      document.getElementById("nameName").innerHTML = null;
+    }
+
+    // ! email :
+
+    if (email === "") {
+      document.getElementById("emails").innerHTML =
+        "** Please fill the email field";
+      return false;
+    }
+    if (email.indexOf("@") < 0) {
+      document.getElementById("emails").innerHTML = "**@ is not present";
+      return false;
+    }
+    if (email.indexOf("@") == 0) {
+      document.getElementById("emails").innerHTML = "**No character before @";
+      return false;
+    }
+    if (email.indexOf(".") == 0) {
+      document.getElementById("emails").innerHTML =
+        "**An email should not be start with . ";
+      return false;
+    }
+ 
+    if (email.indexOf("@") + 1 == ".") {
+      document.getElementById("emails").innerHTML =
+        "**Domain can not start with dot . ";
+      return false;
+    }
+    if (email.indexOf("@") == 0) {
+      document.getElementById("emails").innerHTML = "**No character before @";
+      return false;
+    }
+
+    var expr = /^[a-zA-Z0-9._@]*$/;
+    if (!expr.test(email)) {
+      document.getElementById("emails").innerHTML =
+        "Only Alphabets, Numbers, Dot and Underscore allowed in Username.";
+    }
+    var dot2 = "..";
+    if (email.includes(dot2)) {
+      document.getElementById("emails").innerHTML =
+        "Double dots are not allowed";
+    }
+    else {
+      document.getElementById("emails").innerHTML = null;
+    }
+    
+
+    // Paassward:
+
+    if((pass.length < 6 ) || (pass.length > 10)){
+                document.getElementById("password").innerHTML = "**Passward limit must be 5 to 10";
+                          return false;
+    }
+
+    var passw=  /^[A-Za-z]\w{6,14}$/;
+    if (pass.match(passw)) {
+      document.getElementById("password").innerHTML =
+        "Only alphanumeric inputs are accepted in the password field.";
+    }
+    var decimal=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{6,15}$/;
+    if (pass.match(decimal)) {
+      document.getElementById("password").innerHTML =
+        "Onlield.";
+    }
+    else {
+      document.getElementById("password").innerHTML = null;
+    }
+    
+  }
+</script>

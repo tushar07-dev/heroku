@@ -1,0 +1,16 @@
+# When to use GRID-CSS ? 
+
+CSS Grid Layout excels at dividing a page into major regions or
+ defining the relationship in terms of size, position, and layer, between parts of a control built from HTML.
+
+ Like tables, grid layout enables an author to align elements into columns and rows
+
+ grid container's child elements could position themselves so they actually overlap and layer, similar to CSS positioned elements.
+
+# When to use FLEX-CSS ? 
+
+ In a perfect world of browser support, the reason you'd choose to use flexbox is because you want to lay a collection of items out in one direction or another. As you lay out your items you want
+  to control the dimensions of the items in that one dimension, or control the spacing between items.
+
+  In reality we also often use Flexbox for jobs that might be better done by Grid Layout, as a fallback for Grid, and also in order to get alignment capabilities
+  A common pattern for navigation is to have a list of items displayed as a horizontal bar. This pattern, as basic as it seems, was difficult to achieve before flexbox.

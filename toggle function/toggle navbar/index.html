@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hello{
+            color: blue;
+            text-decoration: line-through;
+            text-decoration-color: red;
+        }
+
+        .tushar{
+            color: red;
+            text-decoration: line-through;
+            text-decoration-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="hello">HEllo World</h1>
+    <h1 id="tushar">Tushar</h1>
+
+    <button id="btn" onclick="classChange()">Change class</button>
+</body>
+</html>
+
+<script>
+    // ClasList => 1) add(); 2) remove(); 3) toggle();
+
+    const title1 = document.getElementById('hello');
+    const title2 = document.getElementById('tushar');
+
+    title1.classList.add('hello');
+    title2.classList.add('tushar');
+
+    let toggle = false ;
+
+    function classChange() {
+        if( toggle == true){
+            console.log("yes");
+            toggle = false;
+            title1.classList.toggle('hello');
+            title2.classList.add('tushar');
+        }
+        else{
+            console.log("no");
+            toggle = true;
+            title2.classList.toggle('tushar');
+            title2.classList.add('hello');
+        }
+    }
+    
+
+</script>
